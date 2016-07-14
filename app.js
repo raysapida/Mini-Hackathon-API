@@ -71,6 +71,29 @@ app.post('/sentiment', function(req, res, next){
   });
 });
 
+// app.post('/sentiment_targeted', function(req, res, next){
+//   var content = req.body.content;
+//   alchemy_language.sentiment_targeted({text: content}, function (err, response) {
+//     if (err)
+//       console.log('error:', err);
+//     else
+//       var results = JSON.stringify(response, null, 2);
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(results);
+//   });
+//   // if (typeof alchemy_language['sentiment_targeted'] === 'function') {
+//   //   alchemy_language['sentiment_targeted'](content, function(err, response) {
+//   //     if (err) {
+//   //       return next(err);
+//   //     }
+//   //     res.setHeader('Content-Type', 'application/json');
+//   //     res.send(results);
+//   //   });
+//   // } else {
+//   //   next({code: 404, error: 'Unknown method: ', alchemy_language });
+//   // }
+// });
+
 app.post('/keywords', function(req, res, next){
   var content = req.body.content;
   alchemy_language.keywords({text: content}, function (err, response) {
