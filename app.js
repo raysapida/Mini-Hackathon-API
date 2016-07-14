@@ -18,6 +18,10 @@ var tone_analyzer = watson.tone_analyzer({
   version_date: '2016-05-19'
 });
 
+var alchemy_language = watson.alchemy_language({
+  api_key: process.env.ALCHEMY_KEY
+});
+
 var app = express();
 
 // view engine setup
@@ -46,6 +50,30 @@ app.post('/tone', function(req, res, next){
       res.setHeader('Content-Type', 'application/json');
       res.send(results);
     }
+  });
+});
+
+app.post('/sentiment', function(req, res, next){
+  var content = req.body.content;
+  alchemy_language.sentiment({text: content}, function (err, response) {
+    if (err)
+      console.log('error:', err);
+    else
+      var results = JSON.stringify(response, null, 2);
+      res.setHeader('Content-Type', 'application/json');
+      res.send(results);
+  });
+});
+
+app.post('/keywords', function(req, res, next){
+  var content = req.body.content;
+  alchemy_language.keywords({text: content}, function (err, response) {
+    if (err)
+      console.log('error:', err);
+    else
+      var results = JSON.stringify(response, null, 2);
+      res.setHeader('Content-Type', 'application/json');
+      res.send(results);
   });
 });
 
