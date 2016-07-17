@@ -15,5 +15,10 @@
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
     "watson-developer-cloud": "^1.12.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3",
+    "should": "^9.0.2",
+    "supertest": "^1.2.0"
   }
 }
