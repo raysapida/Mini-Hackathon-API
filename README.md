@@ -1,8 +1,11 @@
 ![SentiMail Logo](/public/assets/logo_sentimail.png "Logo Sentimail")
 
-[Sentimail](http://sentimail.herokuapp.com/) - **The Better Way to Write Emails!**
 
 [![Travis](https://img.shields.io/travis/nosir/cleave.js.svg?maxAge=2592000)](https://travis-ci.org/nosir/cleave.js)
+
+
+
+[Sentimail](http://sentimail.herokuapp.com/) - **The Better Way to Write Emails!**
 
 Sentimail is a web application, soon to be chrome extension that reduces the pains of writing emails. Utilizing the Watson API via a decoupled Rails App, anyone can now instantly analyze their email drafts, rather than wasting HOURS going back and forth, unsure of the effectiveness of their messages.
 
@@ -37,12 +40,12 @@ Sentimail API-Available API Endpoints
 /tone
 /sentiment
 /keywords
-Each endpoint is a post request and requires a param with a content key.
+
+Each endpoint is a post request and requires a param with a content key:
 
     { content: "Example string" }
   
-Each one returns a JSON.
-Example response for tone
+Each one returns a JSON. Example response for tone:
 
     {
       "document_tone": {
@@ -134,7 +137,7 @@ Example response for tone
       }
     }
     
-Example response for sentiment
+Example response for sentiment:
 
       {
         "status": "OK",
@@ -148,7 +151,7 @@ Example response for sentiment
         }
       }
     
-Example response for keywords
+Example response for keywords:
 
       {
         "status": "OK",
